@@ -17,10 +17,10 @@ class CreateUserProfilesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('avatar');
-            $table->string('image_background');
-            $table->enum('gender',['M','F']);
-            $table->date('birth');
+            $table->string('avatar')->nullable();
+            $table->string('image_background')->nullable();
+            $table->enum('gender',['M','F'])->nullable();
+            $table->date('birth')->nullable();
             $table->timestamps();
         });
     }

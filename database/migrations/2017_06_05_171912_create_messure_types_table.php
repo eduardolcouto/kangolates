@@ -15,6 +15,8 @@ class CreateMessureTypesTable extends Migration
     {
         Schema::create('messure_types', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('unit');
             $table->timestamps();
         });
     }

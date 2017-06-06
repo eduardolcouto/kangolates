@@ -30,4 +30,12 @@ class User extends Authenticatable
     ];
 
 
+    public function profile(){
+        return $this->hasOne(UserProfile::class);
+    }
+
+    public function schedules(){
+        return $this->belongsToMany(Schedule::class);
+    }
+
 }

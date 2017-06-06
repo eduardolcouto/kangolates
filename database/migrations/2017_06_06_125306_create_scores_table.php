@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateScheduleUsers extends Migration
+class CreateScoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateScheduleUsers extends Migration
      */
     public function up()
     {
-        Schema::create('schedule_users', function (Blueprint $table) {
+        Schema::create('scores', function (Blueprint $table) {
             $table->increments('id');
+            $table->float('value_rx')->nullable();
+            $table->float('value_r')->nullable();
+            $table->float('value')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateScheduleUsers extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schedule_users');
+        Schema::dropIfExists('scores');
     }
 }
