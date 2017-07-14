@@ -38,4 +38,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Schedule::class);
     }
 
+    public function scores(){
+        return $this->hasMany(Score::class);
+    }
+
 }
